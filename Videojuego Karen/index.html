@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Videojuego Karen 💖</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="images/portada.png" type="image/png" />
+</head>
+<body>
+
+  <!-- 🌸 PANTALLA INICIAL -->
+  <div id="pantalla-inicial" class="pantalla pantalla-inicial">
+    <div class="contenido-inicial">
+      <button id="btnJugar">Jugar</button>
+    </div>
+  </div>
+
+  <!-- 💞 PANTALLA DEL JUEGO -->
+  <div id="pantalla-juego" class="pantalla pantalla-juego oculto">
+    <div class="container">
+      <p>Encuentra los 6 pares de recuerdos 💕</p>
+
+      <div class="stats">
+        <span><strong>Intentos:</strong> <span id="intentos">0</span></span>
+        <span><strong>Parejas:</strong> <span id="parejas">0 / 6</span></span>
+      </div>
+
+      <div class="grid" id="grid"></div>
+    </div>
+  </div>
+
+  <!-- 💖 PANTALLA FINAL -->
+  <div id="pantalla-final" class="pantalla pantalla-final oculto">
+    <div class="mensaje-final">
+      <h2>Felicidades mi amor 💖</h2>
+      <p>Has ganado otra vez mi corazón 🥰</p>
+      <button id="btnReiniciar">Volver a jugar</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

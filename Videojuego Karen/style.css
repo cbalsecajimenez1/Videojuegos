@@ -1,0 +1,181 @@
+@font-face {
+  font-family: "RomanticFont";
+  src: url("fonts/tu-tipografia.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: "RomanticFont", sans-serif;
+  overflow: hidden;
+}
+
+.pantalla {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: opacity 0.6s ease;
+}
+
+/* 🌸 Pantalla inicial */
+.pantalla-inicial {
+  background: url("images/portada.png") no-repeat center center;
+  background-size: cover;
+}
+
+.contenido-inicial {
+  transform: translateY(40px);
+}
+
+.contenido-inicial button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  padding: 15px 45px;
+  border-radius: 50px;
+  font-size: 1.5em;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.6);
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contenido-inicial button:hover {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
+
+/* 💞 Pantalla del juego */
+.pantalla-juego {
+  background: url("images/canvaggame.png") no-repeat center center;
+  background-size: cover;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 420px;
+  width: 90%;
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+p {
+  color: #7b2cbf;
+  margin-bottom: 20px;
+  font-size: 1.1em;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  color: #a52cc1;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  justify-items: center;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  perspective: 1000px;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 12px;
+  backface-visibility: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.card-front img,
+.card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+/* 💖 Pantalla final */
+.pantalla-final {
+  background: linear-gradient(135deg, #ffe4f2, #fff);
+  text-align: center;
+}
+
+.mensaje-final {
+  background: #fff0f7;
+  padding: 40px;
+  border-radius: 25px;
+  color: #ff3b9d;
+  box-shadow: 0 10px 25px rgba(255, 105, 180, 0.4);
+}
+
+.mensaje-final h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.mensaje-final button {
+  background: #ff3b9d;
+  border: none;
+  color: white;
+  padding: 12px 28px;
+  margin-top: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 1.1em;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.mensaje-final button:hover {
+  background: #ff0077;
+  transform: scale(1.05);
+}
+
+.oculto {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .card {
+    width: 90px;
+    height: 90px;
+  }
+}
